@@ -1,0 +1,2 @@
+let projetsArray;
+export  { projetsArray};

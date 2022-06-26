@@ -1,0 +1,2 @@
+let normalTaskArray;
+export   {normalTaskArray} ;
