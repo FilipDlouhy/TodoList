@@ -8,7 +8,8 @@ import filterDisplay from "./modules/filterDisplay"
 import addProject from "./modules/addProject";
 import project from "./modules/projectOrNormal"
 import displayFromStorage from "./modules/displayFromLocaslStorage"
-
+import projectsArray from "./modules/projectsArray"
+let deleteAllBTN = document.querySelector(".delete-all");
 window.addEventListener("load",()=>{
     project = "normal";
     displayFromStorage();
@@ -44,3 +45,13 @@ filterOptions.forEach((option)=>{
 
 let createProjectBTN = document.querySelector(".add-project");
 createProjectBTN.addEventListener("click",addProject);
+
+deleteAllBTN.addEventListener("click",()=>{
+    localStorage.clear();
+let projects = document.querySelector(".projects")
+projects.innerHTML  =" ";
+let display = document.querySelector(".display")
+display.innerHTML  =" ";
+projectsArray = [];
+normalTaskArray = [];
+})

@@ -58,6 +58,21 @@ header{
     width: 200px;
     cursor: pointer;
 }
+.delete-all{
+    height: 40px;
+    width: 180px;
+    color: white;
+    background-color: rgb(164, 30, 28);
+    border: none;
+    transition: 0.4s;
+    border-radius: 20px; 
+}
+.delete-all:hover{
+    border: 1px solid black;
+    transition: 0.4s;
+    width: 200px;
+    cursor: pointer;}
+
 /*main*/
 main{
     height: 80%;

@@ -2,6 +2,7 @@
 import projetsArray from "./projectsArray";
 import Task from "./createTask"
 import project from "./projectOrNormal";
+import leCheck from "./leCHeck";
 function addFunctionsToProjectTasks(){
   project = "project"
   let display = document.querySelector(".display");
@@ -15,6 +16,11 @@ function addFunctionsToProjectTasks(){
         array.splice(taskIndex,1)
         localStorage.setItem("projetsArray",JSON.stringify( projetsArray))
         display.innerHTML = " ";
+   
+        display.setAttribute("id",projectIndex)
+         display.innerHTML = `  <div class="task-project" >
+       <h2>${projetsArray[projectIndex].title}</h2>
+      </div>` ;
         array.forEach((task,index)=>{
        
             let div = document.createElement("div");
@@ -36,6 +42,7 @@ function addFunctionsToProjectTasks(){
         display.appendChild(div);
      
         })
+        leCheck();
         addFunctionsToProjectTasks();
       })  
     
@@ -115,7 +122,11 @@ function addFunctionsToProjectTasks(){
       div.remove();
       display.innerHTML = " ";
       console.log(array);
-      
+      let display =  document.querySelector(".display");
+      display.setAttribute("id",projectIndex)
+       display.innerHTML = `  <div class="task-project" >
+     <h2>${event.target.innerHTML}</h2>
+    </div>` ;
       array.forEach((task,index)=>{
        
         let div = document.createElement("div");
@@ -138,6 +149,7 @@ function addFunctionsToProjectTasks(){
  
     })
     addFunctionsToProjectTasks();
+    leCheck();
        } })
     
     
